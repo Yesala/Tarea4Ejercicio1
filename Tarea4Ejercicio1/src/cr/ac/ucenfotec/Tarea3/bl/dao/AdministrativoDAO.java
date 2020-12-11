@@ -15,7 +15,7 @@ public class AdministrativoDAO {
 
     private final String TEMPLATE_CMD_INSERTAR = "insert into TAdministrativo(nombre,apellido,numeroCedula,tipoNombramiento,horasSemAsignadas) " +
             "values (?,?,?,?,?)";
-    private final String TEMPLATE_QRY_VIDEO = "select * from TAdministrativo";
+    private final String TEMPLATE_QRY_ADMINISTRATIVO = "select * from TAdministrativo";
 
     private Connection cnx;
     private PreparedStatement cmdInsertar;
@@ -25,7 +25,7 @@ public class AdministrativoDAO {
         this.cnx = conexion;
         try {
             this.cmdInsertar = cnx.prepareStatement(TEMPLATE_CMD_INSERTAR);
-            this.queryADMINISTRATIVO = cnx.prepareStatement(TEMPLATE_QRY_VIDEO);
+            this.queryADMINISTRATIVO = cnx.prepareStatement(TEMPLATE_QRY_ADMINISTRATIVO);
         } catch (Exception e) {
             e.printStackTrace();
         }
